@@ -1,0 +1,31 @@
+## This file is part of Whonix.
+## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+Source: anon-shared-build-remember-sources
+Section: misc
+Priority: optional
+Maintainer: Patrick Schleizer <adrelanos@riseup.net>
+Build-Depends: debhelper (>= 8), faketime, git
+Homepage: https://github.com/Whonix/anon-shared-build-remember-sources
+Vcs-Browser: https://github.com/Whonix/anon-shared-build-remember-sources
+Vcs-Git: https://github.com/Whonix/anon-shared-build-remember-sources.git
+Standards-Version: 3.9.4
+
+Package: anon-shared-build-remember-sources
+Architecture: all
+Depends: damngpl, ${misc:Depends}
+Description: Logs GPL sources during build of Anonymity Linux Distributions
+ Using damngpl --source (Outputs snapshot.debian.net deb-src lines) to create
+ /var/lib/anon-dist/gpl/damngpl_source.
+ .
+ Using damngpl --dget (Outputs format "package=1:1.0-1") to create
+ /var/lib/anon-dist/gpl/damngpl_source.
+ .
+ Using damngpl --snapshot (Outputs snapshot.debian.net deb-src lines) to create
+ /var/lib/anon-dist/gpl/damngpl_snapshot.
+ .
+ Using a chroot-post.d script.
+ .
+ This is useful to keep a log of GPL'ed source code that is included in the
+ build, which is required for licensing reasons.
